@@ -60,6 +60,7 @@ function generateSvg(answers) {
     if (answers.shape == "circle") {
         const circle = new Circle(answers.textForShape, answers.textColor, answers.shape, answers.shapeColor);
         return circle.render();
+        // Brainstorming a way we could handle any potential errors here: what if we get a circle that was rendered incorrectly somehow, eg we somehow got a circle that had different values than the user requested?
     } else if (answers.shape == "triangle") {
         const triangle = new Triangle(answers.textForShape, answers.textColor, answers.shape, answers.shapeColor);
         return triangle.render();
