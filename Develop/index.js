@@ -1,8 +1,8 @@
-// Requiring the modules and packages which will be used: the built-in fs module for writing to a file; inquirer for working with user input; validate-color for validating color keywords and hexadecimal values; and the generateSvg function from fn-generate-svg.js for creating the customized svg code.
+// Requiring the modules and packages which will be used: the built-in fs module for writing to a file; inquirer for working with user input; validate-color for validating color keywords and hexadecimal values; and the generateSvg function from fn-generate-svg.js for creating the customized SVG code.
 const fs = require('fs');
 const inquirer = require('inquirer');
 const validateColor = require('validate-color').default;
-const { generateSvg } = require('./lib/fn-generate-svg.js');
+const generateSvg = require('./lib/fn-generate-svg.js');
 
 
 // Inquirer will prompt the user for their responses to the below questions.
@@ -10,7 +10,7 @@ let questions = [
     {
         type: "input", 
         name: "textForShape", 
-        message: "1. Please enter up to 3 characters for the text for your logo."
+        message: "1. Please enter at least 1 and up to 3 characters for the text for your logo."
     }, 
     {
         type: "input", 
@@ -48,10 +48,10 @@ function init() {
                 throw new Error("Check your responses--you either provided an invalid amount of characters for your logo text, or an invalid color for your text color or shape color.");
             }
 
-            // If the user's input was valid and the user responded to all questions, the user's responses will be passed to the generateSvg function, which will return customized svg code based on the user's responses.
+            // If the user's input was valid and the user responded to all questions, the user's responses will be passed to the generateSvg function, which will return customized SVG code based on the user's responses.
             if (answers.textForShape && answers.textColor && answers.shape && answers.shapeColor) {
                 let svgCode = generateSvg(answers);
-                // The customized svg code will be written to a file named "logo.svg", with the help of the writeToFile function.
+                // The customized SVG code will be written to a file named "logo.svg", with the help of the writeToFile function.
                 writeToFile("logo.svg", svgCode);
             } else {
                 throw new Error("There was an error in obtaining your responses--please try again.");

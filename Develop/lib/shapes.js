@@ -7,13 +7,13 @@ class Shape {
         this.shapeColor = shapeColor;
     }
     renderStarterSvg() {
-        // The renderStarterSvg method provides the first line of svg code, including the svg version, total width and height of the image, and XML namespace.
+        // The renderStarterSvg method provides the first line of SVG code, including the SVG version, total width and height of the image, and XML namespace.
         return `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">`;
     }
 }
 
 
-// Through 4 different methods, the Circle class can create all necessary lines of svg code needed for a circle logo, with a maximum of one variable per method. Isolating each variable into its own section of svg code allows for more precise unit testing.
+// Through 4 different methods, the Circle class can create all necessary lines of SVG code needed for a circle logo, with a maximum of one variable per method. Isolating each variable into its own section of SVG code allows for more precise unit testing.
 class Circle extends Shape {
     constructor(textForShape, textColor, shape, shapeColor) {
         super(textForShape, textColor, shape, shapeColor);
@@ -28,12 +28,13 @@ class Circle extends Shape {
         return `<text x="150" y="120" font-size="55" text-anchor="middle" fill="${this.textColor}">`;
     }
     renderText() {
-        return `${this.textForShape}</text></svg>`;
+        return `${this.textForShape}</text>
+</svg>`;
     }
 }
 
 
-// The Triangle class provides the functionality to render all of the svg for a triangle logo, including polygon points, shape color, and the size, positioning, color, and content of the text.
+// The Triangle class provides the functionality to render all of the SVG for a triangle logo, including polygon points, shape color, and the size, positioning, color, and content of the text.
 class Triangle extends Shape {
     constructor(textForShape, textColor, shape, shapeColor) {
         super(textForShape, textColor, shape, shapeColor);
@@ -48,12 +49,13 @@ class Triangle extends Shape {
         return `<text x="150" y="150" font-size="55" text-anchor="middle" fill="${this.textColor}">`;
     }
     renderText() {
-        return `${this.textForShape}</text></svg>`;
+        return `${this.textForShape}</text>
+</svg>`;
     }
 }
 
 
-// The Square class, similar to the Circle and Triangle classes, renders customized lines of svg code based on user input.
+// The Square class, similar to the Circle and Triangle classes, renders customized lines of SVG code based on user input.
 class Square extends Shape {
     constructor(textForShape, textColor, shape, shapeColor) {
         super(textForShape, textColor, shape, shapeColor);
@@ -68,7 +70,8 @@ class Square extends Shape {
         return `<text x="140" y="120" font-size="60" text-anchor="middle" fill="${this.textColor}">`;
     }
     renderText() {
-        return `${this.textForShape}</text></svg>`;
+        return `${this.textForShape}</text>
+</svg>`;
     }
 }
 
