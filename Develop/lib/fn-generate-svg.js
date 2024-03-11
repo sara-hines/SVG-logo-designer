@@ -4,7 +4,7 @@ const { Triangle } = require("./shapes.js");
 const { Square } = require("./shapes.js");
 
 
-// Based on the user's chosen shape and responses to the prompts, the svg code for the logo will be rendered in parts, using each method of the correct class, and the variable renderedSvg will be used to store and return the finished svg. 
+// Based on the user's chosen shape and responses to the prompts, the SVG code for the logo will be rendered in parts, using each method of the correct class, and the variable renderedSvg will be used to store and return the finished SVG. 
 function generateSvg(answers) {
     if (answers.shape === "circle") {
         const circle = new Circle(answers.textForShape, answers.textColor, answers.shape, answers.shapeColor);
@@ -14,7 +14,9 @@ function generateSvg(answers) {
         let svgForTextColor = circle.renderTextColor();
         let svgForText = circle.renderText();
 
-        let renderedSvg = `${starterSvg}${svgForShape}${svgForTextColor}${svgForText}`;
+        let renderedSvg = `${starterSvg}
+    ${svgForShape}
+    ${svgForTextColor}${svgForText}`;
         return renderedSvg;
 
     } else if (answers.shape === "triangle") {
@@ -25,7 +27,9 @@ function generateSvg(answers) {
         let svgForTextColor = triangle.renderTextColor();
         let svgForText = triangle.renderText();
 
-        let renderedSvg = `${starterSvg}${svgForShape}${svgForTextColor}${svgForText}`;
+        let renderedSvg = `${starterSvg}
+    ${svgForShape}
+    ${svgForTextColor}${svgForText}`;
         return renderedSvg;
 
     } else if (answers.shape === "square") {
@@ -36,7 +40,9 @@ function generateSvg(answers) {
         let svgForTextColor = square.renderTextColor();
         let svgForText = square.renderText();
 
-        let renderedSvg = `${starterSvg}${svgForShape}${svgForTextColor}${svgForText}`;
+        let renderedSvg = `${starterSvg}
+    ${svgForShape}
+    ${svgForTextColor}${svgForText}`;
         return renderedSvg;
     }
 }
